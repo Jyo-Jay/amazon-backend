@@ -4,9 +4,9 @@ const itemSchema = new mongoose.Schema({
         quantity: { type: Number, required: true, min: [1, 'Quantity cannot be less than 1.'] }
     });
 
-const cartSchema = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
         userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
         items: [itemSchema]
     });
 
-module.exports = mongoose.model('Cart', cartSchema);
+module.exports = mongoose.model('Order', orderSchema);
