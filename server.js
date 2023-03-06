@@ -12,7 +12,7 @@ const PORT = process.env.PORT;
 const userRoutes = require('./routes/user.routes');
 const productRoutes = require('./routes/products.routes');
 const cartRoutes = require ('./routes/cart.routes');
-
+const orderRoutes = require('./routes/order.routes');
 
 server.use('/static',express.static(__dirname + '/public'));
 server.use('/uploads',express.static(__dirname + '/uploads'));
@@ -26,7 +26,7 @@ server.use(cors());
 server.use('/users', userRoutes);
 server.use('/products', productRoutes);
 server.use('/cart',cartRoutes);
-
+server.use('/order',orderRoutes);
 
 (async function() {
   try{
